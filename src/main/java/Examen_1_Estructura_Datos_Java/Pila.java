@@ -11,13 +11,16 @@ package Examen_1_Estructura_Datos_Java;
 public class Pila {
     private Nodo topNodo;
     private int largo = 0;
+
     public boolean vacia() {
         return this.topNodo == null;
     }
+
     public void push() {
         this.largo++;
         Nodo newNodo = new Nodo();
         newNodo.setPlato("Plato " + this.largo);
+
         if(this.topNodo == null) {
             this.topNodo = newNodo;
         } else {
@@ -25,9 +28,11 @@ public class Pila {
             this.topNodo = newNodo;
         }
     }
+
     public String listarPila(){
         // Crea una copia de la pila.
         String listaFinal = "";
+
         // Recorre la pila hasta el ultimo node.
         if(!vacia()) {
             System.out.println(this.topNodo.getPlato());

@@ -12,9 +12,7 @@ public class Cola {
     private NodoC frente;
     private NodoC ultimo;
 
-
-
-   public Cola() {
+    public Cola() {
     }
     
     public void encola(NodoC newNodo){
@@ -37,9 +35,7 @@ public class Cola {
         }
     }
 
-
-
-   public NodoC atiende(){
+    public NodoC atiende(){
         NodoC aux = frente;
         if(frente!=null){
             frente=frente.getNodoAnterior();
