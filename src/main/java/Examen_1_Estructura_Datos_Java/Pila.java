@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Examen_1_Estructura_Datos_Java;
-
+import java.util.Random;
 /**
  *
  * @author David Gomez, Gabriel Brilla, Gerald Blanco, Alexander Torres
@@ -11,6 +11,8 @@ package Examen_1_Estructura_Datos_Java;
 public class Pila {
     private Nodo topNodo;
     private int largo = 0;
+    
+    Random random = new Random();
 
     public boolean vacia() {
         return this.topNodo == null;
@@ -19,7 +21,7 @@ public class Pila {
     public void push() {
         this.largo++;
         Nodo newNodo = new Nodo();
-        newNodo.setPlato("Plato " + this.largo);
+        newNodo.setPlato("Plato ---- ID: " + random.nextInt(22)+1);
 
         if(this.topNodo == null) {
             this.topNodo = newNodo;
