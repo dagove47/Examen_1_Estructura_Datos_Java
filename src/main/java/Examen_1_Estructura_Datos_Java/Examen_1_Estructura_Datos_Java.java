@@ -7,11 +7,12 @@ package Examen_1_Estructura_Datos_Java;
 
 /**
  *
- * @author dagove47
+ * @author David Gomez, Gabriel Brilla, Gerald Blanco, Alexander Torres
  */
 public class Examen_1_Estructura_Datos_Java {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        SodaFide soda = new SodaFide();
+        soda.setVisible(true);
     }
 }
