@@ -11,6 +11,8 @@ import java.util.Random;
 public class Pila {
     private Nodo topNodo;
     private int largo = 0;
+    private int newCubiertos;
+    private int totalCubiertos;
     
     Random random = new Random();
 

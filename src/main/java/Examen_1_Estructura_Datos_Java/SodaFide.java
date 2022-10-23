@@ -53,6 +53,8 @@ public class SodaFide extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         pilaTrastes = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
+        cantCubiertos = new javax.swing.JLabel();
+        cantCubiertosFill = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -71,7 +73,6 @@ public class SodaFide extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Soda Fide");
 
         nombreFill.setBackground(new java.awt.Color(211, 211, 211));
@@ -82,19 +83,15 @@ public class SodaFide extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Cedula");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Producto");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Total");
 
         cedulaFill.setBackground(new java.awt.Color(211, 211, 211));
@@ -156,7 +153,6 @@ public class SodaFide extends javax.swing.JFrame {
         jScrollPane3.setViewportView(filaSoda);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Fila");
 
         pilaTrastes.setBackground(new java.awt.Color(211, 211, 211));
@@ -167,8 +163,17 @@ public class SodaFide extends javax.swing.JFrame {
         jScrollPane2.setViewportView(pilaTrastes);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Trastes");
+
+        cantCubiertos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cantCubiertos.setText("Cubiertos");
+
+        cantCubiertosFill.setBackground(new java.awt.Color(211, 211, 211));
+        cantCubiertosFill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cantCubiertosFillActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -194,10 +199,12 @@ public class SodaFide extends javax.swing.JFrame {
                                         .addComponent(nombreFill)
                                         .addComponent(cedulaFill)
                                         .addComponent(productoFill)
-                                        .addComponent(totalFill, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(totalFill, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cantCubiertosFill)))
                                 .addComponent(anadirBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(preferencialBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(atenderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(atenderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cantCubiertos, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(51, 51, 51)
@@ -238,16 +245,20 @@ public class SodaFide extends javax.swing.JFrame {
                             .addComponent(productoFill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(totalFill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cantCubiertos)
+                            .addComponent(cantCubiertosFill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(totalFill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
                         .addGap(18, 18, 18)
                         .addComponent(anadirBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(preferencialBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(atenderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane3))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -284,6 +295,7 @@ public class SodaFide extends javax.swing.JFrame {
         if(nombreFill.getText().equals("") 
                 || cedulaFill.getText().equals("") 
                 || productoFill.getText().equals("") 
+                || cantCubiertosFill.getText().equals("") 
                 || totalFill.getText().equals("")) {
             JOptionPane.showMessageDialog(null, 
                     "Debe ingresar todos los datos solicitados");
@@ -296,6 +308,7 @@ public class SodaFide extends javax.swing.JFrame {
             nombreFill.setText("");
             cedulaFill.setText("");
             productoFill.setText("");
+            cantCubiertosFill.setText("");
             totalFill.setText("");
         }
     }//GEN-LAST:event_anadirBtnActionPerformed
@@ -328,6 +341,10 @@ public class SodaFide extends javax.swing.JFrame {
             totalFill.setText("");
         }
     }//GEN-LAST:event_preferencialBtnActionPerformed
+
+    private void cantCubiertosFillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantCubiertosFillActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cantCubiertosFillActionPerformed
 
     /**
      * @param args the command line arguments
@@ -367,6 +384,8 @@ public class SodaFide extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton anadirBtn;
     private javax.swing.JButton atenderBtn;
+    private javax.swing.JLabel cantCubiertos;
+    private javax.swing.JTextField cantCubiertosFill;
     private javax.swing.JTextField cedulaFill;
     private javax.swing.JTextArea filaSoda;
     private javax.swing.JDialog jDialog1;
