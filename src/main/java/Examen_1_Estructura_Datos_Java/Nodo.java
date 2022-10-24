@@ -11,6 +11,7 @@ package Examen_1_Estructura_Datos_Java;
 public class Nodo {
     
     private String plato;
+    private int cubierto;
     private Nodo nodoAnterior;
     
     public Nodo() {
@@ -25,11 +26,19 @@ public class Nodo {
         return plato;
     }
     
+    public int getCubierto() {
+        return cubierto;
+    }
+    
     public void setNodoAnterior(Nodo nodoAnterior) {
         this.nodoAnterior = nodoAnterior;
     }
     
     public void setPlato(String plato) {
         this.plato = plato;
+    }
+
+    public void setCubierto(int cubierto) {
+        this.cubierto = cubierto;
     }
 }
